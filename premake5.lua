@@ -15,3 +15,9 @@ repo_build.prebuild_copy {
 }
 
 -- Apps: for each app generate batch files and a project based on kit files (e.g. my_name.my_app.kit)
+
+define_app("omnibase.editor.kit")
+define_app("ellie.test_app.kit")
+define_app("ellies.usd_explorer.kit")
+define_app("ellie.usd_composer.kit")
+define_app("ellies.usd_composer.kit")
