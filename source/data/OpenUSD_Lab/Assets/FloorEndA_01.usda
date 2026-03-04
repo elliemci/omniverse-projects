@@ -1,0 +1,18 @@
+#usda 1.0
+(
+    defaultPrim = "FloorEndA_01"
+    endTimeCode = 100
+    metersPerUnit = 0.01
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def Xform "FloorEndA_01" (
+    doc = "FloorEndA_01"
+    kind = "component"
+    payload = @./FloorEndA_01/content.usda@
+)
+{
+}
+

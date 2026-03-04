@@ -1,0 +1,18 @@
+#usda 1.0
+(
+    defaultPrim = "FloorB_02"
+    endTimeCode = 100
+    metersPerUnit = 0.01
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def Xform "FloorB_02" (
+    doc = "FloorB_02"
+    kind = "component"
+    payload = @./FloorB_02/content.usda@
+)
+{
+}
+

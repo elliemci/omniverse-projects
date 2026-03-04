@@ -1,0 +1,253 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (50000, 0, 0)
+                double radius = 500
+            }
+            dictionary Perspective = {
+                double3 position = (439.7729097535512, -301.0997892744628, 427.7289508467542)
+                double3 target = (58.07751403350056, -60.00542511856469, 198.06921144137945)
+            }
+            dictionary Right = {
+                double3 position = (0, -50000, 0)
+                double radius = 500
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 50000)
+                double radius = 500
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary navmeshSettings = {
+            double agentHeight = 180
+            double agentRadius = 20
+            bool excludeRigidBodies = 1
+            int ver = 1
+            double voxelCeiling = 460
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./HoodRack.usdc"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+            float3 "rtx:debugView:pixelDebug:textColor" = (0, 1e18, 0)
+            float3 "rtx:fog:fogColor" = (0.75, 0.75, 0.75)
+            float3 "rtx:index:regionOfInterestMax" = (0, 0, 0)
+            float3 "rtx:index:regionOfInterestMin" = (0, 0, 0)
+            float3 "rtx:post:backgroundZeroAlpha:backgroundDefaultColor" = (0, 0, 0)
+            float3 "rtx:post:colorcorr:contrast" = (1, 1, 1)
+            float3 "rtx:post:colorcorr:gain" = (1, 1, 1)
+            float3 "rtx:post:colorcorr:gamma" = (1, 1, 1)
+            float3 "rtx:post:colorcorr:offset" = (0, 0, 0)
+            float3 "rtx:post:colorcorr:saturation" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:blackpoint" = (0, 0, 0)
+            float3 "rtx:post:colorgrad:contrast" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:gain" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:gamma" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:lift" = (0, 0, 0)
+            float3 "rtx:post:colorgrad:multiply" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:offset" = (0, 0, 0)
+            float3 "rtx:post:colorgrad:whitepoint" = (1, 1, 1)
+            bool "rtx:post:histogram:enabled" = 1
+            float3 "rtx:post:lensDistortion:lensFocalLengthArray" = (10, 30, 50)
+            float3 "rtx:post:lensFlares:anisoFlareFalloffX" = (450, 475, 500)
+            float3 "rtx:post:lensFlares:anisoFlareFalloffY" = (10, 10, 10)
+            float3 "rtx:post:lensFlares:cutoffPoint" = (2, 2, 2)
+            float3 "rtx:post:lensFlares:haloFlareFalloff" = (10, 10, 10)
+            float3 "rtx:post:lensFlares:haloFlareRadius" = (75, 75, 75)
+            float3 "rtx:post:lensFlares:isotropicFlareFalloff" = (50, 50, 50)
+            float3 "rtx:post:tonemap:whitepoint" = (1, 1, 1)
+            float3 "rtx:raytracing:indexdirect:svoBrickSize" = (32, 32, 32)
+            float3 "rtx:raytracing:inscattering:singleScatteringAlbedo" = (0.9, 0.9, 0.9)
+            float3 "rtx:raytracing:inscattering:transmittanceColor" = (0.5, 0.5, 0.5)
+            float3 "rtx:sceneDb:ambientLightColor" = (0.1, 0.1, 0.1)
+        }
+    }
+    defaultPrim = "World"
+    endTimeCode = 0
+    metersPerUnit = 0.01
+    startTimeCode = -1
+    upAxis = "Z"
+)
+
+def Xform "World" (
+    kind = "assembly"
+)
+{
+    def "hoodrack" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        instanceable = true
+        prepend references = @../Assets/Hood_rack_base.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+    }
+
+    def "hood_01" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (10.734922, 0.5116084, -89.76326)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (4.065855643740368, 0.8162257703906703, 146.99124238115846)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "hood_02" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (11.63091, 0.79767656, -89.632034)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (4.519526036823484, 0.8043319008791654, 157.09124238115845)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "hood_03" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (11.125266, 0.73061985, -90.47902)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (4.120865511717908, 0.8260221064757964, 167.19124238115847)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "hood_04" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (11.507553, -0.99771434, -90.01285)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (4.338500937638213, -0.2023529155514625, 177.29124238115847)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "hood_05" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (10.6484785, 0.9350805, -89.39364)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (4.640034029047614, -0.6178658169952189, 187.39124238115846)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "hood_06" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (11.273781, 0.41312283, -89.90512)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (3.914972849871453, 0.8656676484538135, 197.49124238115846)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "hood_07" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (11.36382, -0.23019771, -89.8487)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (4.105462820753071, 0.1752341283508727, 207.59124238115845)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "hood_08" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (10.350895, 0.5152078, -89.24646)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (4.124637924567518, 0.31331877797925767, 217.69124238115847)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "hood_09" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (11.581813, -0.44873175, -89.37674)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (4.745256444470659, 0.08119984989610884, 227.79124238115844)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def "hood_10" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        hide_in_stage_window = false
+        instanceable = true
+        prepend references = @../Assets/Hood.usda@
+    )
+    {
+        rel material:binding = None (
+            bindMaterialAs = "weakerThanDescendants"
+        )
+        float3 xformOp:rotateXYZ = (11.491737, 0.9925157, -89.166115)
+        float3 xformOp:scale = (0.98127675, 1, 1)
+        double3 xformOp:translate = (4.798621311294546, 0.15939002149121184, 237.89124238115846)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+}
+

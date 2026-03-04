@@ -1,0 +1,1 @@
+# Test USD Explorer Setup Extension [ellie.first_usd_explorer_setup_extension]

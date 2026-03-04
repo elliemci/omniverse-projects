@@ -1,0 +1,1715 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (50000, 0, 0)
+                double radius = 500
+            }
+            dictionary Perspective = {
+                double3 position = (2068.3267127621652, 2415.375296219619, 2394.727967168937)
+                double3 target = (-78.0702393118213, 34.73787502890082, -598.1664797942767)
+            }
+            dictionary Right = {
+                double3 position = (0, -50000, 0)
+                double radius = 500
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 50000)
+                double radius = 500
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary navmeshSettings = {
+            double agentHeight = 180
+            double agentRadius = 20
+            bool excludeRigidBodies = 1
+            int ver = 1
+            double voxelCeiling = 460
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./Factory_Floor_Walkways.usda"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+            float3 "rtx:debugView:pixelDebug:textColor" = (0, 1e18, 0)
+            float3 "rtx:fog:fogColor" = (0.75, 0.75, 0.75)
+            float3 "rtx:index:regionOfInterestMax" = (0, 0, 0)
+            float3 "rtx:index:regionOfInterestMin" = (0, 0, 0)
+            float3 "rtx:post:backgroundZeroAlpha:backgroundDefaultColor" = (0, 0, 0)
+            float3 "rtx:post:colorcorr:contrast" = (1, 1, 1)
+            float3 "rtx:post:colorcorr:gain" = (1, 1, 1)
+            float3 "rtx:post:colorcorr:gamma" = (1, 1, 1)
+            float3 "rtx:post:colorcorr:offset" = (0, 0, 0)
+            float3 "rtx:post:colorcorr:saturation" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:blackpoint" = (0, 0, 0)
+            float3 "rtx:post:colorgrad:contrast" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:gain" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:gamma" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:lift" = (0, 0, 0)
+            float3 "rtx:post:colorgrad:multiply" = (1, 1, 1)
+            float3 "rtx:post:colorgrad:offset" = (0, 0, 0)
+            float3 "rtx:post:colorgrad:whitepoint" = (1, 1, 1)
+            float3 "rtx:post:lensDistortion:lensFocalLengthArray" = (10, 30, 50)
+            float3 "rtx:post:lensFlares:anisoFlareFalloffX" = (450, 475, 500)
+            float3 "rtx:post:lensFlares:anisoFlareFalloffY" = (10, 10, 10)
+            float3 "rtx:post:lensFlares:cutoffPoint" = (2, 2, 2)
+            float3 "rtx:post:lensFlares:haloFlareFalloff" = (10, 10, 10)
+            float3 "rtx:post:lensFlares:haloFlareRadius" = (75, 75, 75)
+            float3 "rtx:post:lensFlares:isotropicFlareFalloff" = (50, 50, 50)
+            float3 "rtx:post:tonemap:whitepoint" = (1, 1, 1)
+            float3 "rtx:raytracing:indexdirect:svoBrickSize" = (32, 32, 32)
+            float3 "rtx:raytracing:inscattering:singleScatteringAlbedo" = (0.9, 0.9, 0.9)
+            float3 "rtx:raytracing:inscattering:transmittanceColor" = (0.5, 0.5, 0.5)
+            float3 "rtx:sceneDb:ambientLightColor" = (0.1, 0.1, 0.1)
+        }
+    }
+    defaultPrim = "World"
+    endTimeCode = 0
+    startTimeCode = -1
+    upAxis = "Z"
+)
+
+def Xform "World" (
+    kind = "assembly"
+)
+{
+    double3 xformOp:rotateXYZ = (0, 0, 0)
+    double3 xformOp:scale = (1, 1, 1)
+    double3 xformOp:translate = (0, 0, 0)
+    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+    def Xform "Stage" (
+        kind = "group"
+    )
+    {
+        token ui:displayGroup = "Material Graphs"
+        token ui:displayName = "Set"
+        int ui:order = 1024
+        float3 xformOp:rotateXYZ = (0, 0, 0)
+        float3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+        def Scope "PaintLines" (
+            references = @../Assets/Factory_PaintLines.usda@
+        )
+        {
+            token visibility = "inherited"
+        }
+
+        def Scope "Fencing" (
+            kind = "group"
+        )
+        {
+            def Xform "MetalFencing_A2_07" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (0.8559237, 1, 1)
+                double3 xformOp:translate = (-861.2707437618594, -173.42105351700567, 0.5430242419390653)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_06" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (0.79686296, 1, 1)
+                double3 xformOp:translate = (-906.2412433505717, 55.27778314906164, 0.5430242419390652)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_54" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -91)
+                float3 xformOp:scale = (0.8559237, 1, 1)
+                double3 xformOp:translate = (1039.1528703381866, 184.92841689293476, 0.5430242419390653)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1331.2518356884148, -1854.885554376325, 0.3500443994998932)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (0.71629053, 1, 1)
+                double3 xformOp:translate = (-870.9624592793356, -1500.22408905594, 0.3500151634072495)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampLong_A1" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampLong_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1390.1090705431475, -200.9745968131216, 0.34997689723968506)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1331.3937962692482, -2000.262671669639, 0.5430242419242859)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1329.6337589316538, -2139.452468539671, 0.5430242419240585)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_02" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1329.6094489286168, -2287.0166963450615, 0.5430242419242859)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_03" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1329.685789557826, -2438.3922517252504, 0.5430242419242859)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_04" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1331.5318603517185, -2578.9392063468654, 0.5430242419242859)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_05" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1332.078651484123, -2733.698338263039, 0.5430242419243427)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-932.1000138893723, -1500.2240890559156, 0.3500151634072495)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_08" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-932.1000138893723, 1495.488148416969, 0.3500151634072495)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_10" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (0.5673199, 1.1147264, 1)
+                double3 xformOp:translate = (1098.9720047274734, 1499.7374324760356, 0.3500151634072495)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_11" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (0.6003442, 1.2123702, 1)
+                double3 xformOp:translate = (-863.0283893869504, 1498.5138991553156, 0.3500151634072495)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_06" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1560.0778287304558, -205.7858665618233, 0.35001516340958005)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampLong_A1_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampLong_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, -0, 180)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1390.5587797676435, 187.34537916294047, 0.34997689723968506)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_07" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, -0, 180)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1560.0778287304558, 196.35561513424383, 0.35001516340958005)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_12" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (0.6867231, 1.3024403, 1)
+                double3 xformOp:translate = (-897.0543799584747, -1.6357323142781395, 0.3500151634121223)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1475.80547, 2247.185789089483, 0.3500443994831812)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_08" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1475.80547, 2101.8086717961555, 0.5430242419075739)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_09" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1475.80547, 1957.940884135812, 0.543024241906096)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_10" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1475.80547, 1814.0785736976638, 0.543024241906096)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_11" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 1.1742421)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1629.4427027202478, 1764.73206767157, 0.5430242419059823)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_02" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1475.80547, 1774.441110989047, 0.3500443994831812)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_03" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90.56694)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-919.0307915994866, 2462.7049166558218, 0.3500443994836918)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_12" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 91.912544)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-918.2931853168934, 2266.93611478196, 0.5430242419208184)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_13" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 91.912544)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-923.1026091409137, 2555.3018898463033, 0.5430242419208184)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_14" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-936.6750733155094, 2702.02715, 0.543024241912633)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_05" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-790.7581184925444, 2702.02715, 0.3500443994882393)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_15" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-751.1482787561457, 2702.02715, 0.5430242419111551)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_16" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-607.2099621422733, 2702.02715, 0.5430242419111551)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_17" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-463.2530287163781, 2702.02715, 0.543024241912633)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_07" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90.56694)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-318.60497742455857, 2702.02715, 0.3500443994882393)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_18" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-278.9951376881594, 2702.02715, 0.5430242419111551)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_19" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-135.05682107428657, 2702.02715, 0.5430242419111551)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_20" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (8.900112351608527, 2702.02715, 0.543024241912633)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_08" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90.56694)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (154.1165604620981, 2702.02715, 0.3500443994882393)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_09" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90.56694)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (512.1132373334983, 2702.02715, 0.3500443994882393)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_21" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (552.8197101903039, 2702.02715, 0.5430242419111551)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_23" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (849.5971362962704, 2702.02715, 0.543024241912633)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_22" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (705.6402028703732, 2702.02715, 0.5430242419111551)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_11" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90.56694)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (985.677564789647, 2702.02715, 0.3500443994882393)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_24" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1024.071883022189, 2702.02715, 0.5430242419111551)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_28" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (357.06375839920327, 2702.02715, 0.5430242419111551)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_29" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (209.67042828292455, 2702.02715, 0.5430242419111551)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_04" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1546.7883679315564, -1854.8855543763052, 0.3500443994998932)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_27" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1545.1446921055826, -2000.2626716696307, 0.5430242419242859)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_30" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1544.764102819185, -2139.452468539671, 0.5430242419240585)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_31" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1544.9764964218068, -2287.0166963450806, 0.5430242419242859)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_32" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1543.7724087572628, -2438.392251725251, 0.5430242419242859)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_33" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1544.3765374427344, -2578.9392063469445, 0.5430242419242859)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_34" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1544.94175145675, -2713.5573822816164, 0.5430242419243427)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_05" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1186.6408064550824, -220.2980209773828, 0.35001516340497574)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_13" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1784.8571423355197, -220.2980209773828, 0.35001516340497574)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_14" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, -0, 180)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1784.8571423355197, 216.2271916990148, 0.35001516340497574)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_15" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, -0, 180)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1179.424909548966, 216.2271916990148, 0.35001516340497574)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_06" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1698.1952599224694, 2247.1857890894817, 0.3500443994831812)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_37" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1698.19526, 2101.808671796155, 0.5430242419075739)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_38" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1698.19526, 1957.940884135806, 0.543024241906096)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_39" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1698.19526, 1814.0785736976597, 0.543024241906096)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_10" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1698.1952599224608, 1774.4411109890534, 0.3500443994831812)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_40" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 1.1742421)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1735.6150825025445, 1764.7320676715904, 0.5430242419059823)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_02" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (0.5186837, 1.1631255, 1)
+                double3 xformOp:translate = (1100.3091134890626, -1500.2240890559394, 0.3500151634072495)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_03" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, 0, 90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1134.024910353874, -1500.2240890559406, 0.3500151634072495)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_41" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 91.912544)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-918.2931853168978, 1967.0428518707258, 0.5430242419208184)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_13" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90.56694)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-919.0307915994858, 2162.5933282132423, 0.3500443994836918)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_14" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90.56694)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1099.378888389691, 2164.2723452855926, 0.3500443994836918)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_42" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 91.912544)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1133.1776358623654, 1966.9607275772842, 0.5430242419208184)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_43" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 91.912544)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1133.1776358623656, 2266.853990488572, 0.5430242419208184)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A1_15" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A1.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90.56694)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1099.3788883896912, 2464.383933728138, 0.3500443994836918)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_44" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 91.912544)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1128.368212038347, 2555.2197655528357, 0.5430242419208184)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_45" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1721.4265083190758, -1273.8647616225867, 0.5430242419339493)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_46" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1580.2829938882985, -1273.8647616225867, 0.5430242419339493)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_47" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1440.5051859128394, -1273.8647616225867, 0.5430242419339493)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_48" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1303.007989479798, -1273.8647616225867, 0.5430242419339493)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_49" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1115.489394368215, -1273.8647616225867, 0.5430242419339493)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_50" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1256.6329087989923, -1273.8647616225867, 0.5430242419339493)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_51" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1396.4107167744512, -1273.8647616225867, 0.5430242419339493)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_52" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1533.9079132074928, -1273.8647616225867, 0.5430242419339493)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_17" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1132.7240263051376, -1876.1325027784567, 0.35001516344806305)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_18" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1132.7240263051376, -2168.332251162825, 0.35001516344806305)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_19" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1132.7240263051376, -2466.710855625109, 0.35001516344806305)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "RampShort_A1_20" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/RampShort_A1.usda@
+            )
+            {
+                token visibility = "invisible"
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1132.7240263051376, -2743.234474772694, 0.35001516344806305)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A3" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A3.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1215.9016929797804, -1323.5867122186517, 0.33990299999391776)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A3_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A3.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-975.283876882595, -1277.6574564018672, 0.33990299999391776)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A3_02" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A3.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, -0, 180)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-878.7690445351863, 1280.1879248056048, 0.3499401807785034)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_25" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1246.6917146935386, 1226.6658615362915, 0.3499610126018524)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_26" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1063.092200114733, 1226.6658615362915, 0.3499610126018524)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_35" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1614.0774505868555, 263.03780756314325, 0.3499610126018524)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_36" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1609.184908801245, -263.45300080016636, 0.3499610126018524)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A3_03" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A3.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -90)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-956.0317492356527, 216.7330927866002, 0.3499401807785034)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_53" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1034.8653727433184, -263.45300080016636, 0.3499610126018524)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A2_55" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A2.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1080.7581779893496, 216.7716480332419, 0.3499610126018524)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "MetalFencing_A3_04" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/MetalFencing_A3.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, -0, 180)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-858.8881900068862, -212.04356480329153, 0.3499401807785034)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+        }
+
+        def Scope "Floor" (
+            kind = "group"
+        )
+        {
+            def Xform "FloorB_02" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/FloorB_02.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (101.38815178910113, 0, 0.35)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "FloorB_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/FloorB_01.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (101.38815178910113, 0, 0.35)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "FloorEndA_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/FloorEndA_01.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, -180)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1297.2416668116766, -1.561778860939464, 0.35)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "FloorEndA_02" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/FloorEndA_02.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1500.100022353232, 0, 0.34)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+        }
+
+        def Scope "Walkways" (
+            kind = "group"
+        )
+        {
+            def Xform "WalkwayF_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/WalkwayF_01.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (101.38815178910113, -2946.3535, 0.34995866849999996)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Scope "BlueBeams" (
+                kind = "group"
+            )
+            {
+                def Xform "BlueBeamB_01" (
+                    instanceable = true
+                    kind = "component"
+                    prepend references = @../Assets/BlueBeamB_01.usda@
+                )
+                {
+                    float3 xformOp:rotateXYZ = (0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (-798.5322982108988, 2867.10775, 107.95973)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                }
+
+                def Xform "BlueBeamB_02" (
+                    instanceable = true
+                    kind = "component"
+                    prepend references = @../Assets/BlueBeamB_02.usda@
+                )
+                {
+                    float3 xformOp:rotateXYZ = (0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (-598.5322982108988, 2867.10775, 107.95973)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                }
+
+                def Xform "BlueBeamB_03" (
+                    instanceable = true
+                    kind = "component"
+                    prepend references = @../Assets/BlueBeamB_03.usda@
+                )
+                {
+                    float3 xformOp:rotateXYZ = (0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (-398.5322982108989, 2867.10775, 107.95973)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                }
+
+                def Xform "BlueBeamB_04" (
+                    instanceable = true
+                    kind = "component"
+                    prepend references = @../Assets/BlueBeamB_04.usda@
+                )
+                {
+                    float3 xformOp:rotateXYZ = (0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (-198.5322982108989, 2867.10775, 107.95973)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                }
+
+                def Xform "BlueBeamB_05" (
+                    instanceable = true
+                    kind = "component"
+                    prepend references = @../Assets/BlueBeamB_05.usda@
+                )
+                {
+                    float3 xformOp:rotateXYZ = (0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (1.4677017891011275, 2867.10775, 107.95973)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                }
+
+                def Xform "BlueBeamB_07" (
+                    instanceable = true
+                    kind = "component"
+                    prepend references = @../Assets/BlueBeamB_07.usda@
+                )
+                {
+                    float3 xformOp:rotateXYZ = (0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (401.4676517891011, 2867.10775, 107.95973)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+                    def Xform "BlueBeamB_06" (
+                        instanceable = true
+                        kind = "component"
+                        prepend references = @../Assets/BlueBeamB_06.usda@
+                    )
+                    {
+                        float3 xformOp:rotateXYZ = (0, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (-200, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "BlueBeamB_08" (
+                    instanceable = true
+                    kind = "component"
+                    prepend references = @../Assets/BlueBeamB_08.usda@
+                )
+                {
+                    float3 xformOp:rotateXYZ = (0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (601.4676517891012, 2867.10775, 107.95973)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                }
+
+                def Xform "BlueBeamB_09" (
+                    instanceable = true
+                    kind = "component"
+                    prepend references = @../Assets/BlueBeamB_09.usda@
+                )
+                {
+                    float3 xformOp:rotateXYZ = (0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (801.4676517891012, 2867.10775, 107.95973)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                }
+
+                def Xform "BlueBeamB_10" (
+                    instanceable = true
+                    kind = "component"
+                    prepend references = @../Assets/BlueBeamB_10.usda@
+                )
+                {
+                    float3 xformOp:rotateXYZ = (0, 0, 0)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (1001.4676517891012, 2867.10775, 107.95973)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                }
+            }
+
+            def Xform "WalkwayFloorB_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/WalkwayFloorB_01.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (101.38815178910113, -33.4713, 0.35)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "WalkwayC_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/WalkwayC_01.usda@
+            )
+            {
+                token visibility = "inherited"
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (97.08055178910114, 2867.06075, 0.3500262394)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "WalkwayEndA_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/WalkwayEndA_01.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1279.9118985961957, -396.60000590980053, 0.3500137425)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "WalkwayFloorA_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/WalkwayFloorA_01.usda@
+            )
+            {
+                token visibility = "inherited"
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1281.111898614077, -5.200000077486038, 0.34996499059999997)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "WalkwayB_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/WalkwayB_01.usda@
+            )
+            {
+                token visibility = "inherited"
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1078.3786822412092, 2897.4461776295752, 0.34998549379999844)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "BlueBeamA_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/BlueBeamA_01.usda@
+            )
+            {
+                token visibility = "inherited"
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-998.6786810535866, 2897.4461776295752, 108.03860154922144)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "WalkwayEndB_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/WalkwayEndB_01.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1481.600022353232, -396.4000059068203, 0.33992716)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "WalkwayA_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/WalkwayA_01.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1277.9101547424302, 2895.0000431388617, 0.3400063790000022)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "WalkwayFloorE_01" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/WalkwayFloorE_01.usda@
+            )
+            {
+                token visibility = "inherited"
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1485.1000221297145, -3.500000052154064, 0.3400174033)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def Xform "BlueBeamA_02" (
+                instanceable = true
+                kind = "component"
+                prepend references = @../Assets/BlueBeamA_02.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (1201.65935807582, 2897.0342, 107.94977)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+        }
+
+        def Xform "HoodRacks" (
+            kind = "group"
+        )
+        {
+            float3 xformOp:rotateXYZ = (0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            float3 xformOp:translate:pivot = (-1164.1603, -1725.6708, 137.2927)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:translate:pivot", "xformOp:rotateXYZ", "xformOp:scale", "!invert!xformOp:translate:pivot"]
+
+            def "HoodRack" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1020.5190826816752, -1404.3584354444215, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def "HoodRack_01" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1173.8069030369056, -1404.3584354444215, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def "HoodRack_02" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1328.1816144408479, -1404.3584354444215, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def "HoodRack_03" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1014.5983272926758, -1603.8707425945686, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def "HoodRack_04" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1167.8861476479062, -1603.8707425945686, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def "HoodRack_05" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1322.2608590518485, -1603.8707425945686, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def "HoodRack_06" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1009.3532086302378, -1819.5071370358335, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def "HoodRack_07" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1162.6410289854682, -1819.5071370358335, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def "HoodRack_08" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1020.0579153834915, -2046.9830637816356, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+
+            def "HoodRack_09" (
+                instanceable = true
+                prepend references = @./HoodRack.usda@
+            )
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 0)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-1173.345735738722, -2046.9830637816356, 0.3500771224498749)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+            }
+        }
+    }
+}
+

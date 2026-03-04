@@ -1,0 +1,82 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (50000, 0, 0)
+                double radius = 500
+            }
+            dictionary Perspective = {
+                double3 position = (3468.7774785688443, 847.7973245525341, 2434.2365931990644)
+                double3 target = (334.5078449556386, 85.29892054667778, 333.0857661147852)
+            }
+            dictionary Right = {
+                double3 position = (0, -50000, 0)
+                double radius = 500
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 50000)
+                double radius = 500
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "/home/elliemcintosh/Documents/kit-app-template/source/data/OpenUSD_Lab/Assemblies/Factory_Layout/Layouts.usda"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "World"
+    endTimeCode = 100
+    metersPerUnit = 0.01
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+over "World"
+{
+    over "Equipment"
+    {
+        over "Lockers"
+        {
+            over "lockers_left"
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 81.55428)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (-792.3703215466005, 994.8496213152874, -407.1690546317792)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:translate:pivot", "xformOp:rotateXYZ", "xformOp:scale", "!invert!xformOp:translate:pivot"]
+            }
+
+            over "lockers_right"
+            {
+                float3 xformOp:rotateXYZ = (0, 0, 89.19421)
+                float3 xformOp:scale = (0.7844665, 1, 0.74862945)
+                double3 xformOp:translate = (-560.0249489624496, 618.7252153842437, -340.8707755500017)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:translate:pivot", "xformOp:rotateXYZ", "xformOp:scale", "!invert!xformOp:translate:pivot"]
+
+                over "Welding_locker_01"
+                {
+                    over "Geometry"
+                    {
+                        over "Locker"
+                        {
+                            over "door"
+                            {
+                                float3 xformOp:rotateXYZ = (0, 0, 55.905037)
+                                float3 xformOp:scale = (1, 1, 1)
+                                double3 xformOp:translate = (-65.76004265767003, -432.1183338657538, -8.526512829121225e-13)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

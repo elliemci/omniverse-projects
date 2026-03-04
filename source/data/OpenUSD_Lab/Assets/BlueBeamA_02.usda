@@ -1,0 +1,18 @@
+#usda 1.0
+(
+    defaultPrim = "BlueBeamA_02"
+    endTimeCode = 100
+    metersPerUnit = 0.01
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def Xform "BlueBeamA_02" (
+    doc = "BlueBeamA_02"
+    kind = "component"
+    payload = @./BlueBeamA_02/content.usda@
+)
+{
+}
+

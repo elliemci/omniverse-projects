@@ -1,0 +1,18 @@
+#usda 1.0
+(
+    defaultPrim = "WalkwayC_01"
+    endTimeCode = 100
+    metersPerUnit = 0.01
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def Xform "WalkwayC_01" (
+    doc = "WalkwayC_01"
+    kind = "component"
+    payload = @./WalkwayC_01/content.usda@
+)
+{
+}
+

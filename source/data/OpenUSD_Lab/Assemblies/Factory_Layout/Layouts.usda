@@ -1,0 +1,76 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (50000, 0, 0)
+                double radius = 500
+            }
+            dictionary Perspective = {
+                double3 position = (3732.127148192835, 911.8644681799552, 2610.7808733109605)
+                double3 target = (334.5078449556472, 85.29892054667982, 333.0857661147911)
+            }
+            dictionary Right = {
+                double3 position = (0, -50000, 0)
+                double radius = 500
+            }
+            dictionary Top = {
+                double3 position = (0, 0, 50000)
+                double radius = 500
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "/home/elliemcintosh/Documents/kit-app-template/source/data/OpenUSD_Lab/Assemblies/Factory_Layout/Equipment.usda"
+            dictionary locked = {
+            }
+            dictionary muteness = {
+            }
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "World"
+    endTimeCode = 100
+    metersPerUnit = 0.01
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+over "World"
+{
+    over "Equipment"
+    {
+        over "Lockers"
+        {
+            double3 xformOp:rotateXYZ = (0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (-136.06826264458704, -352.3811904849812, 600.8271496027501)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+
+            over "lockers_left"
+            {
+                over "Welding_locker" (
+                    variants = {
+                        string Looks = "Painted"
+                    }
+                )
+                {
+                }
+            }
+
+            over "lockers_right"
+            {
+                over "Welding_locker" (
+                    variants = {
+                        string Looks = "Painted"
+                    }
+                )
+                {
+                }
+            }
+        }
+    }
+}
+

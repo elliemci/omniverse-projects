@@ -1,0 +1,18 @@
+#usda 1.0
+(
+    defaultPrim = "MetalFencing_A3"
+    endTimeCode = 100
+    metersPerUnit = 0.01
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def Xform "MetalFencing_A3" (
+    doc = "MetalFencing_A3"
+    kind = "component"
+    payload = @./MetalFencing_A3/content.usda@
+)
+{
+}
+

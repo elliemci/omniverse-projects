@@ -1,0 +1,18 @@
+#usda 1.0
+(
+    defaultPrim = "Hood"
+    endTimeCode = 100
+    metersPerUnit = 0.01
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def Xform "Hood" (
+    doc = "Hood"
+    kind = "component"
+    payload = @./Hood/content.usda@
+)
+{
+}
+
