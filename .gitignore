@@ -1,6 +1,9 @@
 ﻿# All folders starting with _ are local.
 _*/
 
+__pycache__
+*.pyc
+
 # Compiled python files.
 *.py[cod]
 

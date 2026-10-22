@@ -99,7 +99,7 @@ class MyExtension(omni.ext.IExt):
         self.pallet_assets = {
             "Pallets_A1": "http://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Industrial/Piles/Pallets_A1.usd",
             "Pallets_A2": "http://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Industrial/Piles/Pallets_A2.usd",
-            "Pallers_A3": "http://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Industrial/Piles/Pallets_A3.usd"
+            "Pallets_A3": "http://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/ArchVis/Industrial/Piles/Pallets_A3.usd"
         }
 
     def on_shutdown(self):
@@ -136,7 +136,7 @@ class MyExtension(omni.ext.IExt):
                     # stack UI wedgets under each other
                     # generate buttons dynamically with lambda n=name, p=path: ... which defers execution until clicked
                     omni.ui.Button(
-                        "Add Random Chardbox",
+                        "Add Random Cardbox",
                         clicked_fn=lambda: self.spawn_from_asset_map(self.cardbox_assets)
                     )
 

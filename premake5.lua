@@ -19,5 +19,4 @@ repo_build.prebuild_copy {
 define_app("omnibase.editor.kit")
 define_app("ellie.test_app.kit")
 define_app("ellies.usd_explorer.kit")
-define_app("ellie.usd_composer.kit")
 define_app("ellies.usd_composer.kit")
