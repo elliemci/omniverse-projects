@@ -37,4 +37,9 @@ deps/**/user.toml
 # Streaming EventTrace
 *.etli
 
-/source
+# Python bytecode and caches
+*.pyc
+__pycache__/
+
+# Auto-generated Omniverse asset thumbnails
+.thumbs/
